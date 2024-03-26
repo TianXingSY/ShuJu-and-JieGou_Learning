@@ -209,11 +209,11 @@ int main() {
     while(geshu>0){
         bianli(L);
         for(j=0;j<delnum;j++){
-            printf("第%d个出列的是为：%d  \n",j+1,liebiao[j]);
+            printf("第%d个出列的是为：%d  \n\n",j+1,liebiao[j]);
         }
 
         if(geshu==1){
-            liebiao[delnum+1]=r->data.number;
+            liebiao[delnum]=r->data.number;
             delnum++;
             geshu--;
         }
@@ -224,11 +224,12 @@ int main() {
             a=r->data.number;
             printf("r->n->d.n=%d\n",a);
             location=Find(L,r->data.number);
-            liebiao[delnum+1]=r->data.number;
+            liebiao[delnum]=r->data.number;
             delnum++;
             geshu--;
-            DelLL(L,location,&m);
             r=r->next;
+            DelLL(L,location,&m);
+
         }
 
     }
