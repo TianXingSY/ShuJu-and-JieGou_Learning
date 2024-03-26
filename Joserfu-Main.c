@@ -159,7 +159,7 @@ int bianli(LinkList L){
     while(j>0){
         printf("±àºÅ£º%d ÃÜÂë£º%d\n",r->data.number,r->data.secrect);
         r=r->next;
-        if(r==L->next){
+        if(r==L->next||r==NULL){
             j--;
         }
     }
@@ -177,7 +177,7 @@ int Find(LinkList L,int x){
         }
         r=r->next;
         i++;
-        if(r==L->next){
+        if(r==L->next ||r==NULL){
             j--;
         }
     }
@@ -195,7 +195,7 @@ int main() {
 
     bianli(L);
 
-    printf("ÊäÈëÖÕÖ¹Êým");
+    printf("ÊäÈëÖÕÖ¹Êým:");
 
     int m,i,*liebiao,delnum=0,location,a;
     liebiao=(int*)malloc(sizeof(int)*geshu);
@@ -208,7 +208,7 @@ int main() {
     }
     while(geshu>0){
 
-        if(geshu==1){
+        if(geshu==1){/**/
             liebiao[delnum+1]=r->data.number;
             delnum++;
             geshu--;
@@ -222,6 +222,7 @@ int main() {
             delnum++;
             geshu--;
             DelLL(L,location,&m);
+            r=r->next;
         }
 
     }
