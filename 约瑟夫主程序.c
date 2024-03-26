@@ -231,31 +231,7 @@ int main() {
     }
     printf("\n");
 
-    /*int dd;
-    int cnu;
-    printf("输入想删除的节点:");
-    scanf("%d",&dd);
-    DelLL(L,dd,&cnu);
-    geshu--;
 
-    bianli(L);
-
-    Elemtype cahru;
-    printf("输入想插入的节点位置和编号和密码:");
-    scanf("%d%d%d",&dd,&cahru.number,&cahru.secrect);
-    InsertLL(L,dd,cahru);
-    geshu++;
-
-    bianli(L);
-
-
-    int nn;
-    printf("输入想删除的节点的值:");
-    scanf("%d",&cnu);
-    dd = Find(L,cnu);
-    DelLL(L,dd,&nn);
-    geshu--;
-    bianli(L);*/
 
 
 
