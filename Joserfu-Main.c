@@ -197,7 +197,7 @@ int main() {
 
     printf("ÊäÈëÖÕÖ¹Êým:");
 
-    int m,i,*liebiao,delnum=0,location,j;
+    int m,i,*liebiao,delnum=0,location,j,a;
     liebiao=(int*)malloc(sizeof(int)*geshu);
     LinkList r,s;
     r=L->next;
@@ -221,8 +221,10 @@ int main() {
             for(i=1;i<m;i++){
                 r=r->next;
             }
-            location=Find(L,r->next->data.number);
-            liebiao[delnum+1]=r->next->data.number;
+            a=r->data.number;
+            printf("r->n->d.n=%d\n",a);
+            location=Find(L,r->data.number);
+            liebiao[delnum+1]=r->data.number;
             delnum++;
             geshu--;
             DelLL(L,location,&m);
