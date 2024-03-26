@@ -212,7 +212,7 @@ int main() {
             printf("第%d个出列的是为：%d  \n",j+1,liebiao[j]);
         }
 
-        if(geshu==1){/**/
+        if(geshu==1){
             liebiao[delnum+1]=r->data.number;
             delnum++;
             geshu--;
