@@ -197,7 +197,7 @@ int main() {
 
     printf("输入终止数m:");
 
-    int m,i,*liebiao,delnum=0,location,a;
+    int m,i,*liebiao,delnum=0,location,j;
     liebiao=(int*)malloc(sizeof(int)*geshu);
     LinkList r,s;
     r=L->next;
@@ -207,6 +207,10 @@ int main() {
         m=3;
     }
     while(geshu>0){
+        bianli(L);
+        for(j=0;j<delnum;j++){
+            printf("第%d个出列的是为：%d  \n",j+1,liebiao[j]);
+        }
 
         if(geshu==1){/**/
             liebiao[delnum+1]=r->data.number;
