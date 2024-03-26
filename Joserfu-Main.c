@@ -72,15 +72,26 @@ int DelLL(LinkList L,int e,int *a){
         return(0);
     }
 
-    int i;
-    LinkList r,s;
+    int i,j=1;
+    LinkList r,s,z;
     r=L->next;
+    z=L->next;
     for(i=0;i<e;i++){
         if(e==1){
+            while(j>0){
+                z=z->next;
+                if(z->next==L->next||z==NULL){
+                    j--;
+                }
+            }
+            z->next=L->next->next;
             s=L->next;
             L->next=L->next->next;
             if(L!=L->next){
                 free(s);
+            }
+            else{
+                printf("Á´±íÎª¿Õ\n");
             }
 
             return(1);
