@@ -46,7 +46,7 @@ int DelList(SeqList *L,int i,Elemtype *e){
 		printf("删除位置i不合法\n");
 		return(0);
 	}
-	*e=L->data[i];
+	*e=L->data[i-1];
 	for(k=i;k<=L->last;k++){
 		L->data[k-1]=L->data[k];
 	}
