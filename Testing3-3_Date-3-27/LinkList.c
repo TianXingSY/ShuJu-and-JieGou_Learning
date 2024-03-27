@@ -21,7 +21,7 @@ int InitList(LinkList *L){
     return(0);
 }
 
-int CreateFromTailWitjoutInput(LinkList L){
+int CreateFromTailWithoutInput(LinkList L){
     Node *r,*s;
     int flag=1,i=0;
     r=L;

@@ -9,11 +9,10 @@ int main(){
     Elemtype min;
     int i=0;
     InitList(&L);
-    CreateFromTailWitjoutInput(L);
+    CreateFromTailWithoutInput(L);
     bianli(L);
     r=L->next;
     min=r->data;
-    s=r;
     while(r!=NULL){
         if(r->data<min){
             min=r->data;
