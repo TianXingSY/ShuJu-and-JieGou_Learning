@@ -11,7 +11,7 @@
 int InitList(LinkList *L){
     *L=(LinkList)malloc(sizeof(Node));
     if(L==NULL){
-        printf("å†…å­˜ç”³è¯·å¤±è´¥\n");
+        printf("ÄÚ´æÉêÇëÊ§°Ü\n");
         return(0);
     }
     else{
@@ -25,9 +25,9 @@ int CreateFromTailWithoutInput(LinkList L){
     Node *r,*s;
     int flag=1,i=0;
     r=L;
-    Elemtype c,listc[11]={99,45,34,56,30,9,45,56,4,6,0};
+    Elemtype c,listc[11]={90,45,34,56,30,9,45,56,4,6,0};
     while(flag){
-        printf("è¯·è¾“å…¥...");
+        printf("ÇëÊäÈë...");
         c=listc[i++];
         if(c>0){
             s=(Node*)malloc(sizeof(Node));
@@ -48,7 +48,7 @@ int CreateFromTail(LinkList L){
     r=L;
     Elemtype c;
     while(flag){
-        printf("è¯·è¾“å…¥ï¼š");
+        printf("ÇëÊäÈë£º");
         scanf("%d",&c);
         if(c!=-0.5){
             s=(Node*)malloc(sizeof(Node));
@@ -66,7 +66,7 @@ int CreateFromTail(LinkList L){
 
 int DelLL(LinkList L,int e,int *a){
     if(e<1){
-        printf("è¾“å…¥éæ³•\n");
+        printf("ÊäÈë·Ç·¨\n");
     }
 
     int i;
@@ -89,7 +89,7 @@ int DelLL(LinkList L,int e,int *a){
             return(1);
         }
         if(r->next==NULL){
-            printf("åˆ é™¤ä½ç½®ä¸å­˜åœ¨\n");
+            printf("É¾³ıÎ»ÖÃ²»´æÔÚ\n");
             return(0);
         }
         r=r->next;
@@ -98,7 +98,7 @@ int DelLL(LinkList L,int e,int *a){
 
 int InsertLL(LinkList L,int e,int a){
     if(e<1){
-        printf("è¾“å…¥éæ³•\n");
+        printf("ÊäÈë·Ç·¨\n");
     }
 
     int i;
@@ -120,7 +120,7 @@ int InsertLL(LinkList L,int e,int a){
             return(1);
         }
         if(r==NULL){
-            printf("æ’å…¥ä½ç½®ä¸å­˜åœ¨\n");
+            printf("²åÈëÎ»ÖÃ²»´æÔÚ\n");
             return(0);
         }
         else if(r->next==NULL && i==e-2){
@@ -135,6 +135,7 @@ int InsertLL(LinkList L,int e,int a){
 int bianli(LinkList L){
     LinkList r;
     r=L->next;
+    printf("\n");
     while(r!=NULL){
         printf("%d ",r->data);
         r=r->next;
@@ -154,6 +155,6 @@ int Find(LinkList L,int x){
         r=r->next;
         i++;
     }
-    printf("æ•°æ®ä¸å­˜åœ¨\n");
+    printf("Êı¾İ²»´æÔÚ\n");
     return(0);
 }

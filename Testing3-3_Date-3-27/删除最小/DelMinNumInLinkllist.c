@@ -20,14 +20,18 @@ int main(){
         if(r->next->data<min){
             min=r->next->data;
             s=r;
+            i++;
         }
         r=r->next;
-        i++;
     }
-    r=s->next;
-    s->next=r->next;
-    free(r);
+    if(i==0){
+        L->next=L->next->next;
+        free(s);
+    }
+    else{
+        r=s->next;
+        s->next=r->next;
+        free(r);
+    }
     bianli(L);
-
-
 }
