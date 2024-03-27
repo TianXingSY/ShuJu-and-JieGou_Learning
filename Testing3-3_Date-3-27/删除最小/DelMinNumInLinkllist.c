@@ -1,8 +1,10 @@
 //
 // Created by l1460 on 2024/3/27.
 //
-#include "LinkList.h"
+
 #include <stdio.h>
+#include "malloc.h"
+#include "LinkList.c"
 
 int main(){
     LinkList L,r,s;
@@ -13,16 +15,19 @@ int main(){
     bianli(L);
     r=L->next;
     min=r->data;
-    while(r!=NULL){
-        if(r->data<min){
-            min=r->data;
+    s=r;
+    while(r->next!=NULL){
+        if(r->next->data<min){
+            min=r->next->data;
             s=r;
         }
         r=r->next;
         i++;
     }
     r=s->next;
-    s->data=r->data;
+    s->next=r->next;
+    free(r);
+    bianli(L);
 
 
 }
