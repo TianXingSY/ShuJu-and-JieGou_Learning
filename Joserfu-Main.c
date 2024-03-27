@@ -87,6 +87,7 @@ int DelLL(LinkList L,int e,int *a){
             z->next=L->next->next;
             s=L->next;
             L->next=L->next->next;
+            *a=r->data.secrect;
             if(L!=L->next){
                 free(s);
             }
@@ -113,6 +114,7 @@ int DelLL(LinkList L,int e,int *a){
     }
     return(0);
 }
+
 
 int bianli(LinkList L){
     LinkList r;
