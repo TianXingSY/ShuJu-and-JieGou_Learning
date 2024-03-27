@@ -5,4 +5,4 @@
 #include <stdio.h>
 
 LinkList L;
-Initlist(&L);
+InitList(&L);
