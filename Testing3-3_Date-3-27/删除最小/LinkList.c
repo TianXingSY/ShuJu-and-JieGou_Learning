@@ -18,7 +18,6 @@ int InitList(LinkList *L){
         (*L)->next=NULL;
         return(1);
     }
-    return(0);
 }
 
 int CreateFromTailWithoutInput(LinkList L){
