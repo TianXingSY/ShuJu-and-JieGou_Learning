@@ -4,5 +4,26 @@
 #include "LinkList.h"
 #include <stdio.h>
 
-LinkList L;
-InitList(&L);
+int main(){
+    LinkList L,r,s;
+    Elemtype min;
+    int i=0;
+    InitList(&L);
+    CreateFromTailWitjoutInput(L);
+    bianli(L);
+    r=L->next;
+    min=r->data;
+    s=r;
+    while(r!=NULL){
+        if(r->data<min){
+            min=r->data;
+            s=r;
+        }
+        r=r->next;
+        i++;
+    }
+    r=s->next;
+    s->data=r->data;
+
+
+}

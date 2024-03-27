@@ -7,14 +7,6 @@
 #include "LinkList.h"
 
 
-typedef int Elemtype;
-
-
-typedef struct node{
-    Elemtype data;
-    struct node *next;
-}Node,*LinkList;
-
 
 int InitList(LinkList *L){
     *L=(LinkList)malloc(sizeof(Node));
@@ -29,6 +21,27 @@ int InitList(LinkList *L){
     return(0);
 }
 
+int CreateFromTailWitjoutInput(LinkList L){
+    Node *r,*s;
+    int flag=1,i=0;
+    r=L;
+    Elemtype c,listc[11]={99,45,34,56,30,9,45,56,4,6,0};
+    while(flag){
+        printf("请输入...");
+        c=listc[i++];
+        if(c>0){
+            s=(Node*)malloc(sizeof(Node));
+            s->data=c;
+            r->next=s;
+            r=s;
+        }
+        else{
+            flag=0;
+            r->next=NULL;
+        }
+    }
+    return(0);
+}
 int CreateFromTail(LinkList L){
     Node *r,*s;
     int flag=1;
