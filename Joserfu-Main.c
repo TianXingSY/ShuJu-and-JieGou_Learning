@@ -114,51 +114,6 @@ int DelLL(LinkList L,int e,int *a){
     return(0);
 }
 
-int InsertLL(LinkList L,int e,Elemtype a){
-    // e：要插入的位置；a：要插入的值
-    if(e<1){
-        printf("输入非法\n");
-        return(0);
-    }
-
-    int i;
-    LinkList r=L->next,s,In;
-    // r：用来遍历链表，s：存储要插入位置的前一个节点，In：用来创建新节点
-    In=(Node*)malloc(sizeof(Node));
-    In->data=a;
-    for(i=0;i<e;i++){
-        if(e==1){
-            // 特殊情况，e等于1时，直接将新节点插在头节点之前
-            In->next=L->next;
-            L->next=In;
-            return(1);
-        }
-        if(i==e-2){
-            // 保存要插入位置的前一个节点
-            s=r;
-        }
-        else if(i==e-1){
-            // 将新节点插入到指定位置
-            s->next=In;
-            In->next=r;
-            return(1);
-        }
-        if(r==L){
-            // 插入位置不存在
-            printf("插入位置不存在\n");
-            return(0);
-        }
-        else if(r->next==L->next && i==e-2){
-            // 特殊情况，插入位置为链表尾，直接将新节点插在链表尾
-            r->next=In;
-            In->next=L->next;
-            return(0);
-        }
-        r=r->next;
-    }
-    return(0);
-}
-
 int bianli(LinkList L){
     LinkList r;
     r=L->next;
@@ -224,9 +179,10 @@ int main() {
             geshu--;
         }
         else{
-            for(i=1;i<m;i++){
+            for(i=2;i<=m;i++){
                 r=r->next;
             }
+            printf("rdn=%d\n",r->data.number);
             location=Find(L,r->data.number);
             liebiao[delnum]=r->data.number;
             delnum++;
