@@ -4,7 +4,13 @@
 
 #include <stdio.h>
 #include <malloc.h>
-#include "LinkList.h"
+typedef int Elemtype;
+
+
+typedef struct node{
+    Elemtype data;
+    struct node *next;
+}Node,*LinkList;
 
 
 
