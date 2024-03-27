@@ -25,13 +25,13 @@ int main(){
         r=r->next;
     }
     if(i==0){
-        L->next=L->next->next;
-        free(s);
+        printf("第一个已是最小值\n");
     }
     else{
         r=s->next;
         s->next=r->next;
-        free(r);
+        r->next=L->next;
+        L->next=r;
     }
     bianli(L);
 }
