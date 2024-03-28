@@ -6,7 +6,7 @@
 int main() {
     LinkList L,r,s,z;
     InitList(&L);
-    CreateFromTailWithoutInput(L);
+    CreateFromTail(L);
     bianli(L);
     r=L->next;
     z=r->next;
