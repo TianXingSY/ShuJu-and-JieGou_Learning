@@ -4,20 +4,17 @@
 #include "LinkList.c"
 
 int main() {
-    LinkList L,r,s,z;
+    LinkList L,s,z;
     InitList(&L);
     CreateFromTailWithoutInput(L);
     bianli(L);
-    r=L->next;
-    z=r->next;
-    s=z;
-    r->next=NULL;
+    z=L->next->next;
+    L->next->next=NULL;
     while(z){
-        L->next=s;
-        z=z->next;
-        s->next=r;
-        r=s;
         s=z;
+        z=z->next;
+        s->next=L->next;
+        L->next=s;
     }
     bianli(L);
 }
