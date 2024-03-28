@@ -9,13 +9,15 @@ int main() {
     CreateFromTailWithoutInput(L);
     bianli(L);
     r=L->next;
-    s=L->next;
-    while(r->next){
-        r=r->next;
-    }
-    z=r;
-    while(L->next!=z){
-
+    z=r->next;
+    s=z;
+    r->next=NULL;
+    while(z){
+        L->next=s;
+        z=z->next;
+        s->next=r;
+        r=s;
+        s=z;
     }
     bianli(L);
 }
