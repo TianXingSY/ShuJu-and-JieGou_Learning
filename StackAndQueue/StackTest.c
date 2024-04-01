@@ -18,19 +18,22 @@ int checkBrackets(char *str) {
 }
 //利用函数检测字符数组里括号数量是否匹配,使用栈
 int checkBrackets2(char *str) {
-    int i = 0;
+    int i = 0,c;
     int count = 0;
-    Stack *stack = createStack();
+    LinkStack Stack;
+    InitStack(&Stack);
     while (str[i] != '\0') {
         if (str[i] == '(') {
-            push(stack, str[i]);
-        } else if (str[i] == ')') {
-            if (isEmpty(stack)) {
-                return 0;
+            Push(Stack, str[i]);
+        }
+        else if (str[i] == ')') {
+            if (StackEmpty(Stack) == 1) {
+                return -1;
+            } else {
+                Pop(Stack,&c);
             }
-            pop(stack);
         }
         i++;
     }
-    return isEmpty(stack);
+    return StackLength(Stack);
 }
