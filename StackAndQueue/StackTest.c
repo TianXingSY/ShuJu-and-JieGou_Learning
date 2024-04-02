@@ -2,38 +2,30 @@
 // Created by l1460 on 2024/4/1.
 //
 #include "StackList.c"
+#include "string.h"
 //利用函数检测字符数组里括号数量是否匹配
-int checkBrackets(char *str) {
-    int i = 0;
-    int count = 0;
-    while (str[i] != '\0') {
-        if (str[i] == '(') {
-            count++;
-        } else if (str[i] == ')') {
-            count--;
-        }
-        i++;
-    }
-    return count;
-}
-//利用函数检测字符数组里括号数量是否匹配,使用栈
-int checkBrackets2(char *str) {
-    int i = 0,c;
-    int count = 0;
-    LinkStack Stack;
-    InitStack(&Stack);
-    while (str[i] != '\0') {
-        if (str[i] == '(') {
-            Push(Stack, str[i]);
-        }
-        else if (str[i] == ')') {
-            if (StackEmpty(Stack) == 1) {
-                return -1;
-            } else {
-                Pop(Stack,&c);
+char *str= "{3+[4*(4+5)]}}";
+
+
+int main() {
+    LinkStack S;
+    InitStack(&S);
+    for (int i = 0; i < strlen(str); i++) {
+        if (str[i] == '(' || str[i] == '[' || str[i] == '{') {
+            Push(&S, str[i]);
+        } else if (str[i] == ')' || str[i] == ']' || str[i] == '}') {
+            if (StackEmpty(&S)) {
+                return 0;
+            }
+            char c;
+            Pop(&S, &c);
+            if ((c == '(' && str[i] != ')') || (c == '[' && str[i] != ']') || (c == '{' && str[i] != '}')) {
+                return 0;
             }
         }
-        i++;
     }
-    return StackLength(Stack);
+    if (StackEmpty(&S)) {
+        return 1;
+    }
+    return 0;
 }
