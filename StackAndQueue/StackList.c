@@ -3,7 +3,7 @@
 //
 #include <malloc.h>
 #include <stdio.h>
-typedef int Elemtype;
+typedef char Elemtype;
 
 typedef struct stack {
     Elemtype data;

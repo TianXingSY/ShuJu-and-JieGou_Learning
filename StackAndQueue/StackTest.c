@@ -12,13 +12,13 @@ int main() {
     InitStack(&S);
     for (int i = 0; i < strlen(str); i++) {
         if (str[i] == '(' || str[i] == '[' || str[i] == '{') {
-            Push(&S, str[i]);
+            Push(S, str[i]);
         } else if (str[i] == ')' || str[i] == ']' || str[i] == '}') {
-            if (StackEmpty(&S)) {
+            if (StackEmpty(S)) {
                 return 0;
             }
             char c;
-            Pop(&S, &c);
+            Pop(S, &c);
             if ((c == '(' && str[i] != ')') || (c == '[' && str[i] != ']') || (c == '{' && str[i] != '}')) {
                 return 0;
             }
