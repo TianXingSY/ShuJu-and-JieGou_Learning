@@ -24,7 +24,7 @@ int main() {
             }
         }
     }
-    if (StackEmpty(&S)) {
+    if (StackEmpty(S)) {
         return 1;
     }
     return 0;
