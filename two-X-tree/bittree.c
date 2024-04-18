@@ -13,13 +13,13 @@ typedef struct treeNode {
 //二叉树前序建立
 bittree *createtree(bittree *root) {
     char c;
+    printf("请输入值：");
     c=getchar();
     if (c == '#') {
         return NULL;
     }
     else{
         root = (bittree *) malloc(sizeof(bittree));
-        printf("请输入值：");
         root->data=c;
         root->left=createtree(root->left);
         root->right=createtree(root->right);
@@ -36,3 +36,10 @@ int PreOrder(bittree *root) {
     PreOrder(root->right);
     return 0;
 }
+
+int main(){
+    bittree *two;
+    two=createtree(two);
+    PreOrder(two);
+    return 0;
+};
