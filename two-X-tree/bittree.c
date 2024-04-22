@@ -31,8 +31,8 @@ int PreOrder(bittree *root) {
     if (root == NULL) {
         return 0;
     }
-    PreOrder(root->left);
     printf("%c",root->data);
+    PreOrder(root->left);
     PreOrder(root->right);
     return 0;
 }
