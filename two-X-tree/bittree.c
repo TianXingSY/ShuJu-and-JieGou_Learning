@@ -15,7 +15,7 @@ bittree *createtree(bittree *root) {
     char c;
     printf("enter a char\n:");
     c=getchar();
-    if (c == '\n') {
+    if (c == '\n'|| c == ' ') {
         return NULL;
     }
     else{
